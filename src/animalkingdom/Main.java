@@ -74,7 +74,15 @@ public class Main {
 			}
 		});
 
-		
+		System.out.println("\n*** STRETCH ***\n");
+		System.out.println("*** For the list of animals, list alphabetically those animals that are mammals ***");
+		animalList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+		animalList.forEach(a -> {
+			if (a.reproduce().equalsIgnoreCase("live birth")) {
+				System.out.println("Animal Name: " + a.getName() + " | Reproduction: " +  a.reproduce() + " | Movement: " + a.move() + " | Year Discovered: " + a.getYearDiscovered());
+			}
+		});		
+
 
 	}
 }
