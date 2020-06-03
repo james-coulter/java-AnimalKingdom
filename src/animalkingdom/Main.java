@@ -45,11 +45,41 @@ public class Main {
 		animalList.forEach(a -> System.out.println(a.getName() + " | How they move: " + a.move()));
 
 		System.out.println("\n*** List only those animals that breath with lungs ***");
+		animalList.forEach( a -> {
+			if (a.breathe().equalsIgnoreCase("lungs")) {
+				System.out.println(a.getName());
+			}
+		});
 
 		System.out.println("\n*** List only those animals that breath with lungs and were named in 1758 ***");
+		animalList.forEach( a -> {
+			if (a.breathe().equalsIgnoreCase("lungs") && a.getYearDiscovered() == 1758) {
+				System.out.println(a.getName());
+			}
+		});
 
 		System.out.println("\n*** List only those animals that lay eggs and breath with lungs ***");
+		animalList.forEach( a -> {
+			if (a.breathe().equalsIgnoreCase("lungs") && a.reproduce().equalsIgnoreCase("eggs")) {
+				System.out.println(a.getName());
+			}
+		});
+
 
 		System.out.println("\n*** List alphabetically only those animals that were named in 1758 ***");
+		animalList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+		animalList.forEach(a -> {
+			if (a.getYearDiscovered() == 1758) {
+				System.out.println(a.getName());
+			}
+		});
+
+		
+
 	}
 }
+
+
+
+
+
